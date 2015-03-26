@@ -47,7 +47,15 @@ angular.module('evapp', ['ionic', 'evapp.controllers', 'evapp.services'])
       }
     }
   })
-
+  .state('tab.schedule-detail', {
+    url: '/schedule/:scheduleId',
+    views: {
+      'tab-schedule': {
+        templateUrl: 'templates/schedule-detail.html',
+        controller: 'ScheduleDetailCtrl'
+      }
+    }
+  })
   .state('tab.speakers', {
       url: '/speakers',
       views: {
