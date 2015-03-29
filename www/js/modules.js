@@ -1,1 +1,3 @@
-angular.module('evapp.controllers', [])
+angular.module('evapp.services', []);
+angular.module('evapp.controllers', []);
+
