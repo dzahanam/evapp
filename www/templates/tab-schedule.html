@@ -1,13 +1,20 @@
 <ion-view view-title="Schedule">
     <ion-content>
-        <ion-item class="list card item-remove-animate" ng-repeat="lecture in lectures" type="item-text-wrap" href="#/tab/schedule/{{lecture.id}}">
-           
-                <div class="item item-icon-left">
-                    <i class="icon {{lecture.icon}}"></i>
-                    <h2>Lecture name: {{lecture.name}}</h2>
-                    <p>shortDesc: {{lecture.shortDescription}}</p>
-                </div>
-            
-        </ion-item>
+        <div class="card">
+            <div class="item item-divider">
+                <p><b>12/13/14</b>
+                </p>
+            </div>
+            <ion-list>
+                <ion-item ng-repeat="lecture in lectures" href="#/tab/schedule/{{lecture.id}}">
+
+                    <div class="item-icon-left">
+                        <i class="icon {{lecture.icon}}"></i>
+                        <h2>{{lecture.name}}</h2>
+                        <p>{{ lecture.date| date:'shortTime'}}</p>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </div>
     </ion-content>
 </ion-view>
