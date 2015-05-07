@@ -22,7 +22,7 @@ angular.module('evapp', ['ionic', 'firebase', 'evapp.controllers', 'evapp.servic
     .state('app', {
         url: "/app",
         abstract: true,
-        templateUrl: "templates/menu.html"
+        templateUrl: "app/templates/menu.html"
     })
 
     // Each tab has its own nav history stack:
@@ -31,7 +31,7 @@ angular.module('evapp', ['ionic', 'firebase', 'evapp.controllers', 'evapp.servic
             url: '/schedule',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/schedule.html',
+                    templateUrl: 'app/schedule/schedule.html',
                     controller: 'ScheduleController as vm'
                 }
             }
@@ -40,7 +40,7 @@ angular.module('evapp', ['ionic', 'firebase', 'evapp.controllers', 'evapp.servic
             url: '/schedule/:scheduleId',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/schedule-detail.html',
+                    templateUrl: 'app/schedule/schedule-detail.html',
                     controller: 'ScheduleDetailController as vm'
                 }
             }
@@ -49,7 +49,7 @@ angular.module('evapp', ['ionic', 'firebase', 'evapp.controllers', 'evapp.servic
             url: '/speakers',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/speakers.html',
+                    templateUrl: 'app/speakers/speakers.html',
                     controller: 'SpeakersController as vm',
                 }
             }
@@ -58,7 +58,7 @@ angular.module('evapp', ['ionic', 'firebase', 'evapp.controllers', 'evapp.servic
             url: '/speakers/:speakerId',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/speaker-detail.html',
+                    templateUrl: 'app/speakers/speaker-detail.html',
                     controller: 'SpeakerDetailController as vm'
                 }
             }
