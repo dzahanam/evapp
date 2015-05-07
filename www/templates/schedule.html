@@ -1,0 +1,21 @@
+<ion-view view-title="Schedule">
+    <ion-content>
+            <div class="item item-divider">
+                <p>02/07/2015</p>
+            </div>
+            <ion-list>
+                <ion-item  class="item item-icon-left item-icon-right" ng-repeat="lecture in vm.lectures" href="#/app/schedule/{{lecture.id}}">
+                    <i class="icon ion-android-favorite-outline"></i>
+                        <h2>{{ lecture.name }}</h2>
+                        <p>{{ lecture.date| date:'shortTime'}}</p>
+                        <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+            </ion-list>
+        <div class="item item-divider">
+            <p>03/07/2015</p>
+        </div>
+        <div class="item item-divider">
+            <p>04/07/2015</p>
+        </div>
+    </ion-content>
+</ion-view>

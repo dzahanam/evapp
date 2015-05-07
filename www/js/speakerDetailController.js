@@ -1,4 +1,12 @@
-angular.module('evapp.controllers')
-.controller('SpeakerDetailCtrl', function($scope, $stateParams, Speakers) {
-  $scope.speaker = Speakers.get($stateParams.speakerId);
-});
+(function(){
+    
+    angular.module('evapp.controllers').controller('SpeakerDetailController', SpeakerDetailController);
+    
+    SpeakerDetailController.$inject =['$scope', '$stateParams', 'speakersRest'];
+    
+    function SpeakerDetailController($scope, $stateParams, speakersRest) {
+        var vm = this;
+        vm.speaker = speakersRest.get($stateParams.speakerId);
+    }
+    
+})();

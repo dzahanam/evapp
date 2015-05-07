@@ -1,9 +1,30 @@
-
-<ion-view view-title="{{speaker.name}}">
+<ion-view view-title=""> 
   <ion-content class="padding">
-    <img ng-src="{{speaker.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{speaker.lastText}}
-    </p>
+      <div class="list card">
+
+          <div class="item item-avatar">
+              <img ng-src="{{vm.speaker.imageUrl}}" style="width: 64px; height: 64px">
+              <h2 ng-bind="vm.speaker.name"></h2>
+              <p ng-bind="vm.speaker.position">
+              </p>
+          </div>
+
+          <div class="item item-body">
+              <p ng-bind="vm.speaker.bio">
+              </p>
+              <p ng-bind="vm.speaker.skills"></p>
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+              <a class="tab-item" target="_blank" ng-href="{{vm.speaker.twitter}}">
+                  <i class="icon ion-social-twitter"></i>
+                    Fallowing me
+              </a>
+              <a class="tab-item" target="_blank" ng-href="{{vm.speaker.web}}">
+                  <i class="icon ion-link"></i>
+                  Visit my page
+              </a>
+          </div>
+      </div>
   </ion-content>
 </ion-view>

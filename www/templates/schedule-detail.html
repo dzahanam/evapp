@@ -1,49 +1,36 @@
-<ion-view view-title="{{lecture.name}}">
+<ion-view view-title="">
     <ion-content class="padding">
-
         <div class="card">
             <div class="item item-divider">
-                <p><b>Name and date:</b></p>
+                <h2>{{vm.lecture.name}}</h2>
             </div>
             <div class="item">
-                <h2>{{lecture.name}}</h2>
-                <p>{{lecture.date | date: 'MM/dd @ HH:mma' }}</p>
+                <p>{{vm.lecture.date | date: 'MM/dd @ HH:mma' }}, Sala B</p>
             </div>
             <div class="item item-divider">
-                <p><b>Details:</b></p>
+                <p>Description</p>
             </div>
             <div class="item item-body">
-                <img class="full-image" src="delorean.jpg">
                 <p>
-                    {{lecture.description}}
-                </p>
-                <p>
-                    <a href="#" class="subdued">1 Like</a>
-                    <a href="#" class="subdued">5 Comments</a>
+                    {{vm.lecture.description}}
                 </p>
             </div>
             <div class>
             </div>
             <div class="item item-divider">
-                <p><b>Location:</b></p>
+                <p>Speakers</p>
             </div>
-            <div class="item item-divider">
-                <p><b>Speakers:</b></p>
+            <div class="item">
+                <p>{{vm.lecture.speaker.name}}</p>
             </div>
-            <div class="item item">
-                <h2>{{lecture.speaker.name}}</h2>
-            </div>
-
             <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class="tab-item" href="#">
                     <i class="icon ion-thumbsup"></i> Like
                 </a>
                 <a class="tab-item" href="#">
-                    <i class="icon ion-star" ng-click="showRatePopup()"></i> Rate
+                    <i class="icon ion-star" ng-click="vm.showRatePopup()"></i> Rate
                 </a>
             </div>
-
         </div>
-
     </ion-content>
 </ion-view>

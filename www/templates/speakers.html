@@ -1,0 +1,12 @@
+<ion-view view-title="Speakers">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="speaker in vm.speakers" type="item-text-wrap" href="#/app/speakers/{{speaker.$id}}">
+        <img ng-src="{{speaker.imageUrl}}">
+        <h2>{{speaker.name}}</h2>
+        <p>{{speaker.position}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,37 +1,47 @@
-angular.module('evapp.controllers')
-
-.controller('ScheduleDetailCtrl', function ($scope, $ionicPopup, $timeout, $stateParams, Lectures) {
-    $scope.lecture = Lectures.get($stateParams.scheduleId);
-    $scope.rate = 3;
-    $scope.max = 5;
+(function(){
     
-    $scope.showRatePopup = function() {
-  // An elaborate, custom popup
-  var myPopup = $ionicPopup.show({
-    template: '<rating ng-model="rate" max="max"></rating>',
-    title: 'Rate lecture:',
-    subTitle: $scope.lecture.name,
-    scope: $scope,
-    buttons: [
-      { text: 'Cancel' },
-      {
-        text: '<b>Rate</b>',
-        type: 'button-positive',
-        onTap: function(e) {
-          if (false) {
-            //don't allow the user to close unless he enters wifi password
-            e.preventDefault();
-          } else {
-          }
-        }
-      }
-    ]
-  });
-  myPopup.then(function(res) {
-    console.log('Tapped!', res);
-  });
-  $timeout(function() {
-     myPopup.close(); //close the popup after 10 seconds for some reason
-  }, 10000);
- };
-});
+    angular.module('evapp.controllers').controller('ScheduleDetailController', ScheduleDetailController);
+    
+    ScheduleDetailController.$inject = ['$scope', '$ionicPopup', '$timeout', '$stateParams', 'Lectures'];
+    
+    function ScheduleDetailController($scope, $ionicPopup, $timeout, $stateParams, Lectures) {
+        var vm = this;
+        
+        vm.lecture = Lectures.get($stateParams.scheduleId);
+        vm.rate = 3;
+        vm.max = 5;
+
+        vm.showRatePopup = function() {
+            // An elaborate, custom popup
+            var myPopup = $ionicPopup.show({
+                template: '<rating ng-model="rate" max="max"></rating>',
+                title: 'Rate lecture:',
+                subTitle: vm.lecture.name,
+                scope: vm,
+                buttons: [
+                    { text: 'Cancel' },
+                    {
+                        text: '<b>Rate</b>',
+                        type: 'button-positive',
+                        onTap: function(e) {
+                            if (false) {
+                                //don't allow the user to close unless he enters wifi password
+                                e.preventDefault();
+                            } else {
+                            }
+                        }
+                    }
+                ]
+            });
+            myPopup.then(function(res) {
+                console.log('Tapped!', res);
+            });
+            $timeout(function() {
+                myPopup.close(); //close the popup after 10 seconds for some reason
+            }, 10000);
+        };
+    }
+})();
+
+
+

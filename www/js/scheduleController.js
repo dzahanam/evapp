@@ -1,4 +1,12 @@
-angular.module('evapp.controllers')
-    .controller('ScheduleCtrl', function ($scope, Lectures) {
-        $scope.lectures = Lectures.all();
-    });
+(function(){
+    angular.module('evapp.controllers').controller('ScheduleController', ScheduleController);
+    
+    ScheduleController.$inject = ['$scope', '$log', 'Lectures'];
+    
+    function ScheduleController ($scope, $log, Lectures) {
+        var vm = this;
+        vm.lectures = Lectures.all();
+    }
+    
+})();
+
