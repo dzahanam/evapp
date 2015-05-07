@@ -4,7 +4,7 @@ Application for events and conferences. You can check schedule and speakers' bio
 #### start
 * git clone repo
 * npm install
-* install bower
+* bower install
 * ionic serve
 
 
