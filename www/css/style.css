@@ -8,3 +8,6 @@ ul.rating li {
 ul.rating li i {
   font-size: 30px;
 }
+.item.wrap {
+white-space: normal;
+}
