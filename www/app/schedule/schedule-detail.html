@@ -5,7 +5,7 @@
                 <h2 ng-bind="vm.lecture.title"></h2>
             </div>
             <div class="item">
-                <p>{{vm.lecture.timestart | date: 'HH:mm' }} - {{vm.lecture.timeend | date: 'HH:mm' }} {{vm.lecture.hall}}</p>
+                <p ng-bind="vm.getBaseInfo(vm.lecture)"></p>
             </div>
             <div class="item item-divider">
                 <p>Description</p>

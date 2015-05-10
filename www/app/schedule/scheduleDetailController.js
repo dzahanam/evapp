@@ -2,12 +2,15 @@
     
     angular.module('evapp.controllers').controller('ScheduleDetailController', ScheduleDetailController);
     
-    ScheduleDetailController.$inject = ['$scope', '$ionicPopup', '$timeout', '$stateParams', 'scheduleRest'];
+    ScheduleDetailController.$inject = ['$scope', '$ionicPopup', '$timeout', '$stateParams', '$filter', 'scheduleRest'];
     
-    function ScheduleDetailController($scope, $ionicPopup, $timeout, $stateParams, scheduleRest) {
+    function ScheduleDetailController($scope, $ionicPopup, $timeout, $stateParams, $filter, scheduleRest) {
         var vm = this;
         
         vm.lecture = scheduleRest.get($stateParams.scheduleId);
+        vm.getBaseInfo = function(lecture){
+            return $filter('date')(lecture.date, 'fullDate') + " " + lecture.timestart + " - " + lecture.timeend + " " + lecture.hall;   
+        };
         
         vm.rate = 3;
         vm.max = 5;
