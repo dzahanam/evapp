@@ -5,7 +5,7 @@
             </div>
             <ion-list>
                 <ion-item  class="item item-icon-left item-icon-right" ng-repeat="lecture in vm.lectures" href="#/app/schedule/{{lecture.id}}">
-                    <i class="icon ion-android-favorite-outline"></i>
+                    <i class="icon ion-clock"></i>
                         <h2>{{ lecture.name }}</h2>
                         <p>{{ lecture.date| date:'shortTime'}}</p>
                         <i class="icon ion-chevron-right icon-accessory"></i>
