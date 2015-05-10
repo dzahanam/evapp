@@ -1,4 +1,4 @@
-angular.module('evapp', ['ionic', 'firebase', 'evapp.controllers', 'evapp.services', 'ionic.rating'])
+angular.module('evapp', ['ionic', 'firebase', 'evapp.controllers', 'evapp.services', 'evapp.directives', 'ionic.rating'])
 
 .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {

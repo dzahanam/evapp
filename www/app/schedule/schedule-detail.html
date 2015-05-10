@@ -1,18 +1,17 @@
-<ion-view view-title="">
+<ion-view view-title="Lecture">
     <ion-content class="padding">
         <div class="card">
             <div class="item item-divider">
-                <h2>{{vm.lecture.name}}</h2>
+                <h2 ng-bind="vm.lecture.title"></h2>
             </div>
             <div class="item">
-                <p>{{vm.lecture.date | date: 'MM/dd @ HH:mma' }}, Sala B</p>
+                <p>{{vm.lecture.timestart | date: 'HH:mm' }} - {{vm.lecture.timeend | date: 'HH:mm' }} {{vm.lecture.hall}}</p>
             </div>
             <div class="item item-divider">
                 <p>Description</p>
             </div>
             <div class="item item-body">
-                <p>
-                    {{vm.lecture.description}}
+                <p ng-bind="vm.lecture.description">
                 </p>
             </div>
             <div class>
@@ -20,8 +19,9 @@
             <div class="item item-divider">
                 <p>Speakers</p>
             </div>
-            <div class="item">
-                <p>{{vm.lecture.speaker.name}}</p>
+            <div class="item item-avatar" ng-repeat="speaker in vm.lecture.speakers">
+                <img ng-src="{{speaker.imageUrl}}">
+                <p ng-bind="speaker.name"></p>
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class="tab-item" href="#">

@@ -1,12 +1,12 @@
 {
   "name": "evapp",
   "private": "true",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "ionic-rating": "~0.1.0",
-    "firebase":"~2.2.4",
+    "firebase": "~2.2.4",
     "angularfire": "~1.1.1",
-    "ionic": "driftyco/ionic-bower#1.0.0-rc.5"
+    "ionic": "driftyco/ionic-bower#1.0.0-rc.5",
+    "lodash": "~3.8.0"
   }
 }

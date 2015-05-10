@@ -1,0 +1,13 @@
+<div>
+    <div class="item item-divider">
+        <p ng-bind="vm.date|date:fullDate" style="text-align: center"></p>
+    </div>
+    <ion-list>
+        <ion-item  class="item item-icon-left item-icon-right" ng-repeat="lecture in vm.lectures" href="#/app/schedule/{{lecture.$id}}">
+            <i class="icon ion-android-favorite-outline"></i>
+            <h2>{{ lecture.title }}</h2>
+            <p>{{ lecture.timestart| date:'shortTime'}} - {{ lecture.timeend| date:'shortTime'}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+    </ion-list>
+</div>

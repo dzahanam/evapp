@@ -2,22 +2,23 @@
     
     angular.module('evapp.controllers').controller('ScheduleDetailController', ScheduleDetailController);
     
-    ScheduleDetailController.$inject = ['$scope', '$ionicPopup', '$timeout', '$stateParams', 'Lectures'];
+    ScheduleDetailController.$inject = ['$scope', '$ionicPopup', '$timeout', '$stateParams', 'scheduleRest'];
     
-    function ScheduleDetailController($scope, $ionicPopup, $timeout, $stateParams, Lectures) {
+    function ScheduleDetailController($scope, $ionicPopup, $timeout, $stateParams, scheduleRest) {
         var vm = this;
         
-        vm.lecture = Lectures.get($stateParams.scheduleId);
+        vm.lecture = scheduleRest.get($stateParams.scheduleId);
+        
         vm.rate = 3;
         vm.max = 5;
 
         vm.showRatePopup = function() {
             // An elaborate, custom popup
             var myPopup = $ionicPopup.show({
-                template: '<rating ng-model="rate" max="max"></rating>',
+                template: '<rating ng-model="vm.rate" max="vm.max"></rating>',
                 title: 'Rate lecture:',
                 subTitle: vm.lecture.name,
-                scope: vm,
+                scope: $scope,
                 buttons: [
                     { text: 'Cancel' },
                     {
